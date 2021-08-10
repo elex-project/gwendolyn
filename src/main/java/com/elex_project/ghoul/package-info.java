@@ -5,4 +5,4 @@
  * https://www.elex-project.com/
  */
 
-rootProject.name = "ghoul"
+package com.elex_project.ghoul;

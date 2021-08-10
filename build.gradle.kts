@@ -1,26 +1,18 @@
-buildscript {
-	repositories {
-		maven {
-			url = uri("https://repository.elex-project.com/repository/maven")
-		}
-	}
-
-	dependencies {
-		classpath ("com.jaredsburrows:gradle-license-plugin:0.8.90")
-	}
-}
+/*
+ * Project Ghoul
+ *
+ * Copyright (c) 2021. Elex.
+ * https://www.elex-project.com/
+ */
 
 plugins {
 	java
 	application
-	`maven-publish`
-	id("com.github.ben-manes.versions") version "0.39.0"
-	id("com.jaredsburrows.license") version "0.8.90"
 }
 
 group = "com.elex-project"
-version = "1.0-SNAPSHOT"
-description = ""//todo
+version = "1.0.0"
+description = "Gradle Wrapper Version Updater"
 
 repositories {
 	maven {
@@ -28,7 +20,7 @@ repositories {
 	}
 }
 application{
-	mainClass.set("com.elex_project.sample.Application")
+	mainClass.set("com.elex_project.ghoul.Application")
 }
 
 java {
@@ -101,92 +93,17 @@ tasks.javadoc {
 
 }
 
-tasks.licenseReport {
-	generateCsvReport = false
-	generateHtmlReport = false
-	generateJsonReport = true
-}
-
-publishing {
-	publications {
-		create<MavenPublication>("mavenJava") {
-			from(components["java"])
-			pom {
-				// todo
-				name.set(project.name)
-				description.set(project.description)
-				url.set("https://")
-				inceptionYear.set("2021")
-				properties.set(mapOf(
-						"prop.with.dots" to "anotherValue"
-				))
-				organization {
-					name.set("Elex co.,Pte.")
-					url.set("https://www.elex-project.com/")
-				}
-				licenses {
-					license {
-						// todo
-						name.set("licenseName")
-						url.set("licenseUrl")
-						comments.set("")
-					}
-				}
-				developers {
-					developer {
-						id.set("elex")
-						name.set("Elex")
-						url.set("https://www.elex.pe.kr/")
-						email.set("developer@elex-project.com")
-						organization.set("Elex Co.,Pte.")
-						organizationUrl.set("https://www.elex-project.com/")
-						roles.set(arrayListOf("Developer", "CEO"))
-						timezone.set("Asia/Seoul")
-						properties.set(mapOf("" to ""))
-					}
-				}
-				contributors {
-					contributor {
-						name.set("")
-						email.set("")
-						url.set("")
-					}
-				}
-				scm {
-					// todo
-					connection.set("scm:git:https://github.com/my-library.git")
-					developerConnection.set("scm:git:https://github.com/my-library.git")
-					url.set("https://github.com/my-library/")
-				}
-			}
-		}
-	}
-
-	repositories {
-		maven {
-			name = "mavenElex"
-			val urlRelease = uri("https://repository.elex-project.com/repository/maven-releases")
-			val urlSnapshot = uri("https://repository.elex-project.com/repository/maven-snapshots")
-			url = if (version.toString().endsWith("SNAPSHOT")) urlSnapshot else urlRelease
-			credentials {
-				username = project.findProperty("repo.username") as String
-				password = project.findProperty("repo.password") as String
-			}
-		}
-
-	}
-}
-
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-	implementation("org.slf4j:slf4j-api:1.7.30")
+	implementation("org.slf4j:slf4j-api:1.7.32")
 	implementation("org.jetbrains:annotations:21.0.1")
+
+	implementation("org.jsoup:jsoup:1.14.1")
 
 	compileOnly("org.projectlombok:lombok:1.18.20")
 	annotationProcessor("org.projectlombok:lombok:1.18.20")
 	testAnnotationProcessor("org.projectlombok:lombok:1.18.20")
 
-	implementation("ch.qos.logback:logback-classic:1.2.3")
-	testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
-	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+	implementation("ch.qos.logback:logback-classic:1.2.5")
+	testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
 }
