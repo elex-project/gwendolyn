@@ -82,7 +82,9 @@ tasks.compileTestJava {
 tasks.test {
 	useJUnitPlatform()
 }
-
+tasks.installDist{
+	into("/home/elex/scripts/ghoul")
+}
 tasks.javadoc {
 	if (JavaVersion.current().isJava9Compatible) {
 		(options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
