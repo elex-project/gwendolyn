@@ -26,14 +26,6 @@ repositories {
 	maven {
 		url = uri("https://repository.elex-project.com/repository/maven")
 	}
-	maven {
-		name = "Github Packages"
-		url = uri("https://maven.pkg.github.com/")
-		credentials {
-			username = project.findProperty("github.username") as String
-			password = project.findProperty("github.token") as String
-		}
-	}
 }
 application{
 	mainClass.set("com.elex_project.sample.Application")
@@ -181,14 +173,7 @@ publishing {
 				password = project.findProperty("repo.password") as String
 			}
 		}
-		maven {
-			name = "mavenGithub"
-			url = uri("https://maven.pkg.github.com/elex-project/tmpl-java-application")
-			credentials {
-				username = project.findProperty("github.username") as String
-				password = project.findProperty("github.token") as String
-			}
-		}
+
 	}
 }
 
