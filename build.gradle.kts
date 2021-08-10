@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0.0"
+version = "1.0.1"
 description = "Gradle Wrapper Version Updater"
 
 repositories {
@@ -19,6 +19,7 @@ repositories {
 		url = uri("https://repository.elex-project.com/repository/maven")
 	}
 }
+
 application{
 	mainClass.set("com.elex_project.ghoul.Application")
 }
@@ -50,6 +51,7 @@ tasks.jar {
 		))
 	}
 }
+
 tasks.register<Jar>("fatJar"){
 	group = "distribution"
 	description = "Build a Fat-Jar archive."
@@ -71,6 +73,7 @@ tasks.register<Jar>("fatJar"){
 	exclude("**/module-info.class", "**/LICENSE", "**/NOTICE")
 
 }
+
 tasks.compileJava {
 	options.encoding = "UTF-8"
 }
@@ -82,9 +85,11 @@ tasks.compileTestJava {
 tasks.test {
 	useJUnitPlatform()
 }
+
 tasks.installDist{
-	into("/home/elex/scripts/ghoul")
+	into("${System.getProperty("user.home")}/scripts/${project.name}")
 }
+
 tasks.javadoc {
 	if (JavaVersion.current().isJava9Compatible) {
 		(options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
