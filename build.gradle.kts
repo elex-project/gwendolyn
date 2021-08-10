@@ -4,14 +4,27 @@
  * Copyright (c) 2021. Elex.
  * https://www.elex-project.com/
  */
+buildscript {
+	repositories {
+		maven {
+			url = uri("https://repository.elex-project.com/repository/maven")
+		}
+	}
+
+	dependencies {
+		classpath ("com.jaredsburrows:gradle-license-plugin:0.8.90")
+	}
+}
 
 plugins {
 	java
 	application
+	idea
+	id("com.jaredsburrows.license") version "0.8.90"
 }
 
 group = "com.elex-project"
-version = "1.0.1"
+version = "1.0.2"
 description = "Gradle Wrapper Version Updater"
 
 repositories {
@@ -80,6 +93,12 @@ tasks.compileJava {
 
 tasks.compileTestJava {
 	options.encoding = "UTF-8"
+}
+
+tasks.licenseReport {
+	generateCsvReport = false
+	generateHtmlReport = true
+	generateJsonReport = true
 }
 
 tasks.test {

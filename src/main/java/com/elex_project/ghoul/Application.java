@@ -26,13 +26,14 @@ import java.util.regex.Pattern;
 public class Application {
 
 	public static void main(String... args) {
-		System.out.println("Gradle wrapper version updater\n");
+		System.out.println("# Gradle wrapper version updater\n");
 
 		try {
 			final Path dir = getWorkingDir(args);
-			System.out.println("Current working directory: " + dir.toString());
+			System.out.println("* Current working directory: " + dir.toAbsolutePath().toString());
 			final String ver = getVersion(args);
-			System.out.println("Latest version found: " + ver);
+			System.out.println("* Latest version found: " + ver);
+			System.out.println();
 
 			doUpdate(dir, ver);
 
@@ -125,8 +126,8 @@ public class Application {
 		if (null != args && args.length > 1) {
 			return args[1];
 		} else {
-			Document document = Jsoup.connect("https://gradle.org/releases/").get();
-			Elements elements =
+			final Document document = Jsoup.connect("https://gradle.org/releases/").get();
+			final Elements elements =
 					document.getElementsMatchingText(Pattern.compile("^v\\d+.\\d+(.\\d+)?$"));
 			log.debug("Found Regex matching: {}", elements.size());
 
