@@ -1,5 +1,6 @@
 # Gradle Wrapper Version Updater
 
+## To Run
 ```bash
 ./build/install/bin/ghoul /home/elex/workspace 7.1.1
 # or
