@@ -1,2 +1,2 @@
-rootProject.name = "tmpl-java-application"
+rootProject.name = "gradle-wrapper-version-updater"
 
