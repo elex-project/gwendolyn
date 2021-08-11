@@ -122,7 +122,7 @@ public class Application {
 	 * @throws IOException
 	 */
 	@VisibleForTesting
-	static String getVersion(final String... args) throws IOException {
+	public static String getVersion(final String... args) throws IOException {
 		if (null != args && args.length > 1) {
 			return args[1];
 		} else {

@@ -24,7 +24,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0.2"
+version = "1.0.3"
 description = "Gradle Wrapper Version Updater"
 
 repositories {
@@ -35,6 +35,7 @@ repositories {
 
 application{
 	mainClass.set("com.elex_project.ghoul.Application")
+	mainModule.set("com.elex_project.ghoul")
 }
 
 java {
@@ -59,8 +60,7 @@ tasks.jar {
 				"Implementation-Title" to project.name,
 				"Implementation-Version" to project.version,
 				"Implementation-Vendor" to "ELEX co.,pte.",
-				"Main-Class" to application.mainClass,
-				"Automatic-Module-Name" to "com.elex_project.${project.name}"
+				"Main-Class" to application.mainClass
 		))
 	}
 }
