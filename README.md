@@ -2,11 +2,11 @@
 
 ## To Run
 ```bash
-./bin/ghoul /home/elex/workspace 7.1.1
+./bin/gwendolyn /home/elex/workspace 7.1.1
 # or
-./bin/ghoul /home/elex/workspace
+./bin/gwendolyn /home/elex/workspace
 # or
-./bin/ghoul
+./bin/gwendolyn
 ```
 
 It will find all the 'gradle-wrapper.properties' files recursively, under the given path. 
