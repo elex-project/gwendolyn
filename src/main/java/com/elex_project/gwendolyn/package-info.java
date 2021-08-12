@@ -5,4 +5,4 @@
  * https://www.elex-project.com/
  */
 
-rootProject.name = "gwendolyn"
+package com.elex_project.gwendolyn;

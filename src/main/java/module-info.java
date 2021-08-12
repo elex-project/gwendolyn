@@ -1,9 +1,9 @@
-module com.elex_project.ghoul {
+module com.elex_project.gwendolyn {
 	requires static lombok;
 	requires org.jetbrains.annotations;
 	requires org.jsoup;
 	requires org.slf4j;
 	//requires ch.qos.logback.classic;
 	//requires logback.classic;
-	exports com.elex_project.ghoul;
+	exports com.elex_project.gwendolyn;
 }

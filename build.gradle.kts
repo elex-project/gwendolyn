@@ -1,7 +1,7 @@
 /*
- * Project Ghoul
+ * Project Gwendolyn
  *
- * Copyright (c) 2021. Elex.
+ * Copyright (c) 2021-2021. Elex.
  * https://www.elex-project.com/
  */
 buildscript {
@@ -9,10 +9,6 @@ buildscript {
 		maven {
 			url = uri("https://repository.elex-project.com/repository/maven")
 		}
-	}
-
-	dependencies {
-		classpath ("com.jaredsburrows:gradle-license-plugin:0.8.90")
 	}
 }
 
@@ -24,7 +20,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0.3"
+version = "1.0.4"
 description = "Gradle Wrapper Version Updater"
 
 repositories {
@@ -34,8 +30,8 @@ repositories {
 }
 
 application{
-	mainClass.set("com.elex_project.ghoul.Application")
-	mainModule.set("com.elex_project.ghoul")
+	mainClass.set("com.elex_project.gwendolyn.Application")
+	mainModule.set("com.elex_project.gwendolyn")
 }
 
 java {

@@ -1,11 +1,11 @@
 /*
- * Project Ghoul
+ * Project Gwendolyn
  *
- * Copyright (c) 2021. Elex.
+ * Copyright (c) 2021-2021. Elex.
  * https://www.elex-project.com/
  */
 
-package com.elex_project.ghoul;
+package com.elex_project.gwendolyn;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;

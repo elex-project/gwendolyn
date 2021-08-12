@@ -1,13 +1,13 @@
 /*
- * Project Ghoul
+ * Project Gwendolyn
  *
- * Copyright (c) 2021. Elex.
+ * Copyright (c) 2021-2021. Elex.
  * https://www.elex-project.com/
  */
 
-package com.elex_project.ghoul.test;
+package com.elex_project.gwendolyn.test;
 
-import com.elex_project.ghoul.Application;
+import com.elex_project.gwendolyn.Application;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

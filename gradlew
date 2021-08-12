@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 #
-# Project Ghoul
+# Project Gwendolyn
 #
-# Copyright (c) 2021. Elex.
+# Copyright (c) 2021-2021. Elex.
 # https://www.elex-project.com/
 #
 
